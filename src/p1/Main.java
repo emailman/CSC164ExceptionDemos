@@ -12,9 +12,7 @@ public class Main {
         do {
             System.out.print("Enter a radius: ");
             try {
-                String reply = input.next();
-
-                double radius = Double.parseDouble(reply);
+                double radius = input.nextDouble();
 
                 double area = Math.PI * Math.pow(radius, 2);
 
@@ -23,12 +21,9 @@ public class Main {
                 continueInput = false;
 
             } catch (InputMismatchException e) {
-                System.out.println("You messed up 1, try again");
+                System.out.println("You did not enter a number, try again");
                 // Flush the input buffer
                 input.nextLine();
-
-            } catch (NumberFormatException e) {
-                System.out.println("You messed up 2, try again");
 
             } catch (Exception e) {
                 System.out.println("Something else happened");
